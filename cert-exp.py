@@ -14,16 +14,16 @@ def get_SSL_Expiry_Date(host, port):
 with open('sites_static.csv', 'r') as sites_static:
   reader = csv.reader(sites_static)
   for row in reader:
-    expires, notes, ou, ou_contact, port, servername, site, tp_contact = row
-    print(expires, notes, ou, ou_contact, port, servername, site, tp_contact, sep=",")
+    expires, notes, bu, bu_contact, port, servername, site, ext_contact = row
+    print(expires, notes, bu, bu_contact, port, servername, site, ext_contact, sep=",")
 
 with open('sites_lookup.csv', 'r') as sites_lookup:
   reader = csv.reader(sites_lookup)
   for row in reader:
-    expires, notes, ou, ou_contact, port, servername, site, tp_contact = row
+    expires, notes, bu, bu_contact, port, servername, site, ext_contact = row
     if servername != "servername":
       # print("{}:{}".format(servername,port))
       exp = get_SSL_Expiry_Date(servername,port)
       expmdY = exp[4:6],exp[6:8],exp[0:4]
       expFormatted="/".join(expmdY)
-      print(expFormatted, notes, ou, ou_contact, port, servername, site, tp_contact, sep=",")
+      print(expFormatted, notes, bu, bu_contact, port, servername, site, ext_contact, sep=",")
