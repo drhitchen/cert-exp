@@ -1,11 +1,25 @@
 # cert-exp
-Check TLS certification expiration dates to update inventory or dashboard.
+Check TLS certificate expiration dates to update inventory or dashboard.
 
 I created this tool to solve a very specific use case. Feel free to use or modify to suite your needs.
 
-## Requires
+Choose your own adventure (bash or python)!
 
-### pyOpenSSL
+- **cert-exp.sh** - bash shell script version
+- **cert-exp.py** - python version
+
+## Usage
+```bash
+./cert-exp.sh
+
+- or -
+
+python3 ./cert-exp.py
+```
+
+## Requirements
+
+### pyOpenSSL (for cert-exp.py)
 ```
 pip install pyopenssl
 ```
@@ -48,7 +62,7 @@ expires,notes,bu,bu_contact,port,servername,site,ext_contact
 01/01/2023,Bing (example only),NA,NA,443,bing.com,google.com,Bing
 ```
 
-**sites_lookup.csv - example (expiration date initially unknown)**
+**sites_lookup.csv - example (expiration dates initially unknown)**
 
 ```
 expires,notes,bu,bu_contact,port,servername,site,ext_contact
